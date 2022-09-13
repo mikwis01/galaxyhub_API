@@ -4,7 +4,10 @@ let moment = require('moment')
 
 async function scrapeCryptonews_EN() {
 	let cryptoNewsResultArray = []
-	const browser = await puppeteer.launch()
+	const browser = await puppeteer.launch({
+		headless: true,
+		args: ['--no-sandbox']
+	})
 	const page = await browser.newPage()
 	await page.goto('https://cryptonews.com/news/')
 
@@ -69,7 +72,10 @@ async function scrapeCryptonews_EN() {
 
 async function scrapeCryptodaily_EN() {
 	let cryptoDailyResultArray = []
-	const browser = await puppeteer.launch()
+	const browser = await puppeteer.launch({
+		headless: true,
+		args: ['--no-sandbox']
+	})
 	const page = await browser.newPage()
 	await page.goto('https://cryptodaily.co.uk/')
 
@@ -139,7 +145,10 @@ async function scrapeCryptodaily_EN() {
 
 async function scrapeBitcoin_PL() {
 	let bitcoinResultArray = []
-	const browser = await puppeteer.launch()
+	const browser = await puppeteer.launch({
+		headless: true,
+		args: ['--no-sandbox']
+	})
 	const page = await browser.newPage()
 	await page.goto('https://bitcoin.pl/wiadomosci')
 
