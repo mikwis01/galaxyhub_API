@@ -190,6 +190,7 @@ async function scrapeBitcoin_PL() {
 
 	browser.close()
 
+	// console.log(bitcoinResultArray)
 	return bitcoinResultArray
 }
 
@@ -211,6 +212,7 @@ const scrapeAll = () => {
 				})
 
 				if (!exist) {
+					console.log('New news has been added to the database!')
 					await News.create({
 						header: singleNews.header,
 						image: singleNews.image,

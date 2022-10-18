@@ -18,5 +18,12 @@ app.use(errorHandler)
 app.listen(port, () => console.log(`Server started on port ${port}`))
 
 //--- 5 min after every midnight
-cron.schedule('5 0 * * *', scrapeAll)
 cron.schedule('5 0 * * *', cleanUpNews)
+cron.schedule('5 0 * * *', scrapeAll)
+
+//--- Every minute
+// cron.schedule('*/1 * * * *', cleanUpNews)
+// cron.schedule('*/1 * * * *', scrapeAll)
+
+// scrapeAll()
+// cleanUpNews()
